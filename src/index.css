@@ -1,1 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --color-pink: #be2469;
+  --color-gray: #a6adba;
+  --color-blue: #182b62;
+  --color-black: #242933;
+  --color-white: #ffffff;
+  --color-darkBlue: #2a303c;
+  --color-violet: #6419e6;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-darkBlue);
+}
+
+@layer base {
+  .container {
+    margin: auto;
+    padding: 1rem;
+  }
+}

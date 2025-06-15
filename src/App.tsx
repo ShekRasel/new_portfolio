@@ -1,9 +1,7 @@
-function App() {
-  return (
-    <>
-      <h1 className="text-red-400">hi</h1>
-    </>
-  );
-}
+import { useRoutes } from "react-router-dom";
+import { routes } from "src/routes";
 
-export default App;
+export const App = () => {
+  const route = useRoutes(routes);
+  return <div className="min-h-screen container">{route}</div>;
+};
