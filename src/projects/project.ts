@@ -7,11 +7,19 @@ export type Projects = {
   projectLink: string;
   technology: string[];
   descriptions: string[];
+  subImages?: string[];
 };
 export const projects: Projects[] = [
   {
     id: 1,
     image: Assets.ecommere,
+    subImages: [
+      Assets.EcommerceA,
+      Assets.EcommerceB,
+      Assets.EcommerceC,
+      Assets.EcommerceD,
+      Assets.EcommerceE,
+    ],
     name: "Synzo Ecommerce site",
     projectLink: "https://ecommerce-site-two-drab.vercel.app/",
     technology: ["React", "Tailwind CSS", "React Router", "Vercel"],
@@ -49,19 +57,6 @@ export const projects: Projects[] = [
     ],
   },
   {
-    id: 4,
-    image: Assets.expense,
-    name: "Expense Tracker",
-    projectLink: "https://expense-tracker-mu-puce.vercel.app/",
-    technology: ["React", "LocalStorage", "Tailwind CSS"],
-    descriptions: [
-      "1. Built a dynamic expense tracker with React.",
-      "2. Used localStorage to persist user data.",
-      "3. Added filtering by category and date.",
-      "4. Focused on clean UI with real-time updates.",
-    ],
-  },
-  {
     id: 5,
     image: Assets.cryptoland,
     name: "Cryptoland",
@@ -74,6 +69,20 @@ export const projects: Projects[] = [
       "4. Includes search and sorting capabilities.",
     ],
   },
+  {
+    id: 4,
+    image: Assets.expense,
+    name: "Expense Tracker",
+    projectLink: "https://expense-tracker-mu-puce.vercel.app/",
+    technology: ["React", "LocalStorage", "Tailwind CSS"],
+    descriptions: [
+      "1. Built a dynamic expense tracker with React.",
+      "2. Used localStorage to persist user data.",
+      "3. Added filtering by category and date.",
+      "4. Focused on clean UI with real-time updates.",
+    ],
+  },
+
   {
     id: 6,
     image: Assets.project1,

@@ -1,4 +1,5 @@
 import { type FC, type JSX } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { projects, type Projects } from "src/projects/project";
 
@@ -12,12 +13,19 @@ export const ProjectDetails: FC = (): JSX.Element => {
   return (
     <div className="grid lg:grid-cols-2 gap-8 lg:py-16 h-full">
       {/* slide section */}
-      <div className="rounded-xl border-gray">
-        <img
-          src={selectedProject?.image}
-          alt="project images"
-          className="rounded-xl h-full object-cover"
-        />
+      <div
+        className="rounded-xl h-full flex justify-between items-center p-4 lg:p-6 bg-cover bg-no-repeat bg-center"
+        style={{ backgroundImage: `url(${selectedProject?.image})` }}
+      >
+        {/* left arrow */}
+        <span className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer">
+          <FaChevronLeft />
+        </span>
+
+        {/* right arrow */}
+        <span className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer">
+          <FaChevronRight />
+        </span>
       </div>
 
       {/* detials section */}

@@ -2,6 +2,7 @@ import { type FC, type JSX } from "react";
 import Lottie from "react-lottie";
 import { PrimaryButton } from "src/components/buttons/primary.button";
 import animationData from "src/lottiesAnimation/about.json";
+import { Assets } from "src/utilities/assets";
 
 export const AboutMe: FC = (): JSX.Element => {
   const defaultOptions = {
@@ -30,7 +31,9 @@ export const AboutMe: FC = (): JSX.Element => {
           I like to learn and make new things. As well as I also love traveling,
           sight seeing, and reading books in my free time.
         </p>
-        <PrimaryButton>Get Resume</PrimaryButton>
+        <a href={Assets.cv} download>
+          <PrimaryButton>Get Resume</PrimaryButton>
+        </a>
       </div>
     </div>
   );

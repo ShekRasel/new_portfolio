@@ -1,10 +1,10 @@
+import { motion } from "framer-motion";
 import { useState, type FC, type JSX } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { PrimaryButton } from "src/components/buttons/primary.button";
 import { SecondaryButton } from "src/components/buttons/secondary.button";
 import { projects } from "src/projects/project";
-
 export const Project: FC = (): JSX.Element => {
   const [visible, setVisible] = useState<number>(4);
   return (
@@ -17,13 +17,21 @@ export const Project: FC = (): JSX.Element => {
       </h1>
       {/* project details */}
       <div className="grid md:grid-cols-2 lg:px-16 gap-8 text-gray">
-        {projects.slice(0, visible).map((project) => (
-          <div className="bg-black rounded-lg" key={project.name}>
-            <img
+        {projects.slice(0, visible).map((project,index) => (
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2, ease: "easeInOut" }}
+            className="bg-black rounded-lg"
+            key={project.name}
+          >
+            <div style={{backgroundImage : `url(${project.image})`}} className="h-56 rounded-t-lg w-full bg-cover bg-no-repeat"/>
+            {/* <img
               src={project.image}
               alt="project image"
               className="rounded-t-lg h-56 w-full object-cover"
-            />
+            /> */}
             <div className="p-4 lg:p-8 space-y-4">
               <h1 className="font-semibold text-white">{project.name}</h1>
               <div>
@@ -37,7 +45,7 @@ export const Project: FC = (): JSX.Element => {
                 </PrimaryButton>
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 

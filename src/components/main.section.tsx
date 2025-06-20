@@ -1,4 +1,4 @@
-import { FaBars, FaFacebook, FaReact } from "react-icons/fa";
+import { FaBars, FaDownload, FaFacebook, FaReact } from "react-icons/fa";
 import { GrGithub } from "react-icons/gr";
 import { LuLinkedin } from "react-icons/lu";
 import { SecondaryButton } from "./buttons/secondary.button";
@@ -7,6 +7,7 @@ import animationData from "src/lottiesAnimation/work-hard.json";
 import Lottie from "react-lottie";
 import { Card } from "./Card";
 import { MdAndroid } from "react-icons/md";
+import TypewriterComponent from "typewriter-effect";
 
 export const MainSection = () => {
   const defaultOptions = {
@@ -20,26 +21,52 @@ export const MainSection = () => {
   return (
     <div className="space-y-16">
       <div className="relative">
-        <div className="bg-blue p-6 lg:p-0 lg:px-20 lg:py-20 flex flex-col lg:flex-row rounded-md text-white items-center gap-10 lg:gap-20">
+        <div className="bg-blue p-6 lg:p-0 lg:px-20 lg:py-20 flex flex-col lg:flex-row rounded-md lg:rounded-2xl text-white items-center gap-10 lg:gap-20">
           <div className="lg:w-1/2 space-y-8 z-20">
             <div className="flex gap-8">
-              <FaFacebook size={30} />
-              <LuLinkedin size={30} />
-              <GrGithub size={30} />
+              <a href="https://web.facebook.com/md.rasel.970600" target="blank">
+                <FaFacebook size={30} />
+              </a>
+              <a href="https://www.linkedin.com/in/shek-rasel/" target="blank">
+                {" "}
+                <LuLinkedin size={30} />
+              </a>
+              <a href="https://github.com/ShekRasel" target="blank">
+                {" "}
+                <GrGithub size={30} />
+              </a>
             </div>
-            <div>
-              <h1 className="text-2xl font-semibold">
+            <div className="text-2xl lg:text-3xl">
+              <h1 className="font-semibold">
                 Hello, I'M <span className="text-pink">Rasel</span>
               </h1>
-              <h1 className="text-3xl font-semibold">React Developer</h1>
+              <TypewriterComponent
+                options={{
+                  strings: [
+                    "JavaScript Developer",
+                    "React Developer",
+                    "MernStack Developer",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 30,
+                  delay: 50,
+                }}
+              />
             </div>
             <p>
               I am passionate about coding and making awesome interactive
               layouts for web applications.
             </p>
             <div className="flex flex-col lg:flex-row gap-4 w-full">
-              <SecondaryButton>Get Resume</SecondaryButton>
-              <PrimaryButton>Contact Me</PrimaryButton>
+              <a href={Assets.cv} download>
+                <SecondaryButton className="flex gap-2 items-center">
+                  Get Resume <FaDownload />
+                </SecondaryButton>
+              </a>
+              <Link to="/contact">
+                <PrimaryButton>Contact Me</PrimaryButton>
+              </Link>
             </div>
           </div>
 
@@ -50,7 +77,7 @@ export const MainSection = () => {
         </div>
 
         {/*curve div*/}
-        <div className="custom-shape-divider-bottom rounded-md">
+        <div className="custom-shape-divider-bottom rounded-md lg:rounded-2xl">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +100,10 @@ export const MainSection = () => {
   );
 };
 
+//feature
 import { type FC, type JSX } from "react";
+import { Assets } from "src/utilities/assets";
+import { Link } from "react-router-dom";
 
 export const Features: FC = (): JSX.Element => {
   const header1 = "Web Development";

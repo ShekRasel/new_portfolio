@@ -1,9 +1,8 @@
 import { useRef, useState, type FC, type JSX } from "react";
 import { NavLink } from "react-router-dom";
-import { PrimaryButton } from "./buttons/primary.button";
 import { HiOutlineBars3CenterLeft } from "react-icons/hi2";
 import { useClickOutSite } from "src/hooks/click.outside";
-
+import { Assets } from "src/utilities/assets";
 type NavUrl = {
   name: string;
   link: string;
@@ -78,7 +77,8 @@ export const Navbar: FC = (): JSX.Element => {
         )}
       </div>
 
-      <PrimaryButton>SRPort</PrimaryButton>
+      {/* logo */}
+      <img src={Assets.logo} alt="logo" width={60} className="rounded-lg" />
 
       {/* desktop view */}
       <div className="gap-4 hidden lg:flex">
