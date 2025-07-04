@@ -9,6 +9,7 @@ export type Projects = {
   descriptions: string[];
   subImages?: string[];
 };
+
 export const projects: Projects[] = [
   {
     id: 1,

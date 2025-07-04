@@ -1,31 +1,61 @@
-import { type FC, type JSX } from "react";
+import { useEffect, useState, type FC, type JSX } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { projects, type Projects } from "src/projects/project";
 
 export const ProjectDetails: FC = (): JSX.Element => {
   const { slug } = useParams<{ slug: string }>();
+  const [selectedProject, setSelectedProject] = useState<
+    Projects | undefined
+  >();
+  const [imageNumber, setImageNumber] = useState<number>(0);
 
-  const selectedProject: Projects | undefined = projects.find(
-    (project) => project.name === slug
-  );
+  const handleIncrease = () => {
+    const last = selectedProject?.subImages?.length ?? 0;
+    setImageNumber((prev) => (prev === last - 1 ? 0 : prev + 1));
+  };
+
+  const handleDecrease = () => {
+    const last = selectedProject?.subImages?.length ?? 0;
+    setImageNumber((prev) => (prev === 0 ? last - 1 : prev - 1));
+  };
+
+  useEffect(() => {
+    const project: Projects | undefined = projects.find(
+      (project) => project.name === slug
+    );
+    setSelectedProject(project);
+  }, [slug]);
+
+  // console.log(selectedProject?.subImages?.map((i)=>i))
+
+  if (!selectedProject)
+    return <p className="text-white text-center">Loading...</p>;
 
   return (
     <div className="grid lg:grid-cols-2 gap-8 lg:py-16 h-full">
       {/* slide section */}
       <div
         className="rounded-xl h-full flex justify-between items-center p-4 lg:p-6 bg-cover bg-no-repeat bg-center"
-        style={{ backgroundImage: `url(${selectedProject?.image})` }}
+        style={{
+          backgroundImage: `url(${selectedProject?.subImages?.[imageNumber]})`,
+        }}
       >
         {/* left arrow */}
-        <span className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer">
+        <button
+          className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer"
+          onClick={handleDecrease}
+        >
           <FaChevronLeft />
-        </span>
+        </button>
 
         {/* right arrow */}
-        <span className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer">
+        <button
+          className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer"
+          onClick={handleIncrease}
+        >
           <FaChevronRight />
-        </span>
+        </button>
       </div>
 
       {/* detials section */}
