@@ -27,35 +27,44 @@ export const ProjectDetails: FC = (): JSX.Element => {
     setSelectedProject(project);
   }, [slug]);
 
-  // console.log(selectedProject?.subImages?.map((i)=>i))
-
   if (!selectedProject)
     return <p className="text-white text-center">Loading...</p>;
 
   return (
-    <div className="grid lg:grid-cols-2 gap-8 lg:py-16 h-full">
+    <div className="grid lg:grid-cols-2 gap-8 lg:py-16">
       {/* slide section */}
-      <div
-        className="rounded-xl h-full flex justify-between items-center p-4 lg:p-6 bg-cover bg-no-repeat bg-center"
-        style={{
-          backgroundImage: `url(${selectedProject?.subImages?.[imageNumber]})`,
-        }}
-      >
-        {/* left arrow */}
-        <button
-          className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer"
-          onClick={handleDecrease}
+      <div className="relative overflow-hidden rounded-xl">
+        <div
+          className="flex h-full w-full transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${100 * imageNumber}%)` }}
         >
-          <FaChevronLeft />
-        </button>
+          {selectedProject?.subImages?.map((image) => (
+            <img
+              src={image}
+              alt="sub images project"
+              key={image}
+              className="w-full h-full object-cover"
+            />
+          ))}
+        </div>
 
-        {/* right arrow */}
-        <button
-          className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer"
-          onClick={handleIncrease}
-        >
-          <FaChevronRight />
-        </button>
+        <div className="flex justify-between w-full px-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          {/* left arrow */}
+          <button
+            className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer"
+            onClick={handleDecrease}
+          >
+            <FaChevronLeft />
+          </button>
+
+          {/* right arrow */}
+          <button
+            className="bg-black rounded-full p-3 flex justify-center items-center text-white cursor-pointer"
+            onClick={handleIncrease}
+          >
+            <FaChevronRight />
+          </button>
+        </div>
       </div>
 
       {/* detials section */}

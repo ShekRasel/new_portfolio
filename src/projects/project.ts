@@ -34,6 +34,15 @@ export const projects: Projects[] = [
   {
     id: 2,
     image: Assets.hotel,
+    subImages: [
+      Assets.HotelA,
+      Assets.HotelB,
+      Assets.HotelC,
+      Assets.HotelD,
+      Assets.HotelE,
+      Assets.HotelF,
+      Assets.HotelG,
+    ],
     name: "Hotel management",
     projectLink: "https://da-hotel-website.vercel.app/",
     technology: ["React", "Tailwind CSS", "Flexbox", "Grid"],
@@ -47,6 +56,14 @@ export const projects: Projects[] = [
   {
     id: 3,
     image: Assets.project4,
+    subImages: [
+      Assets.Task_Pro_A,
+      Assets.Task_Pro_B,
+      Assets.Task_Pro_C,
+      Assets.Task_Pro_D,
+      Assets.Task_Pro_E,
+      Assets.Task_Pro_F,
+    ],
     name: "TaskPro App",
     projectLink: "https://task-pro-app-three.vercel.app/",
     technology: ["React", "Tailwind CSS", "Drag and Drop", "React DnD"],
@@ -60,6 +77,16 @@ export const projects: Projects[] = [
   {
     id: 5,
     image: Assets.cryptoland,
+    subImages: [
+      Assets.cryptolandA,
+      Assets.cryptolandB,
+      Assets.cryptolandC,
+      Assets.cryptolandD,
+      Assets.cryptolandE,
+      Assets.cryptolandF,
+      Assets.cryptolandG,
+      Assets.cryptolandH,
+    ],
     name: "Cryptoland",
     projectLink: "https://cryptoland-chi.vercel.app/",
     technology: ["React", "Axios", "Chart.js", "Tailwind CSS"],
