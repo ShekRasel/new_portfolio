@@ -5,6 +5,7 @@ import { projects, type Projects } from "src/projects/project";
 
 export const ProjectDetails: FC = (): JSX.Element => {
   const { slug } = useParams<{ slug: string }>();
+
   const [selectedProject, setSelectedProject] = useState<
     Projects | undefined
   >();

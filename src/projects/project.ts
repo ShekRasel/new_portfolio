@@ -55,7 +55,7 @@ export const projects: Projects[] = [
   },
   {
     id: 3,
-    image: Assets.project4,
+    image: Assets.task_pro,
     subImages: [
       Assets.Task_Pro_A,
       Assets.Task_Pro_B,
@@ -100,6 +100,14 @@ export const projects: Projects[] = [
   {
     id: 4,
     image: Assets.expense,
+    subImages: [
+      Assets.expenseA,
+      Assets.expenseB,
+      Assets.expenseC,
+      Assets.expenseD,
+      Assets.expenseE,
+    ],
+
     name: "Expense Tracker",
     projectLink: "https://expense-tracker-mu-puce.vercel.app/",
     technology: ["React", "LocalStorage", "Tailwind CSS"],
@@ -113,7 +121,16 @@ export const projects: Projects[] = [
 
   {
     id: 6,
-    image: Assets.project1,
+    image: Assets.nft,
+    subImages: [
+      Assets.nftA,
+      Assets.nftB,
+      Assets.nftC,
+      Assets.nftD,
+      Assets.nftE,
+      Assets.nftF,
+      Assets.nftG,
+    ],
     name: "NFT Market Place",
     projectLink: "https://nft-market-place-chi-eight.vercel.app/",
     technology: ["React", "Tailwind CSS", "Reusable Components"],
@@ -126,7 +143,17 @@ export const projects: Projects[] = [
   },
   {
     id: 7,
-    image: Assets.project2,
+    image: Assets.event,
+    subImages: [
+      Assets.eventA,
+      Assets.eventB,
+      Assets.eventC,
+      Assets.eventD,
+      Assets.eventE,
+      Assets.eventF,
+      Assets.eventG,
+      Assets.eventH,
+    ],
     name: "Event Management System",
     projectLink: "https://frontend-eight-steel-19.vercel.app/",
     technology: [
@@ -144,8 +171,18 @@ export const projects: Projects[] = [
   },
   {
     id: 8,
-    image: Assets.project3,
+    image: Assets.Education_UI,
     name: "Education Landing page",
+    subImages: [
+      Assets.eduA,
+      Assets.eduB,
+      Assets.eduC,
+      Assets.eduD,
+      Assets.eduE,
+      Assets.eduF,
+      Assets.eduG,
+      Assets.eduH,
+    ],
     projectLink: "https://education-site-henna.vercel.app/",
     technology: ["React", "Tailwind CSS", "Animations"],
     descriptions: [
@@ -153,32 +190,6 @@ export const projects: Projects[] = [
       "2. Used animations to highlight key sections.",
       "3. Focused on modern educational layout.",
       "4. Responsive for mobile and tablet views.",
-    ],
-  },
-  {
-    id: 9,
-    image: Assets.weather_og,
-    name: "Weather App",
-    projectLink: "https://react-weather-app-silk-five.vercel.app/",
-    technology: ["React", "OpenWeatherMap API", "Tailwind CSS"],
-    descriptions: [
-      "1. React app to fetch and display weather data.",
-      "2. Integrated OpenWeatherMap API.",
-      "3. Included temperature, wind, and forecast info.",
-      "4. Styled with minimalist weather-focused UI.",
-    ],
-  },
-  {
-    id: 10,
-    image: Assets.youtube,
-    name: "YouTube Clone, html/css",
-    projectLink: "https://youtube-clone-eight-sable.vercel.app/",
-    technology: ["HTML", "CSS", "Flexbox", "Grid"],
-    descriptions: [
-      "1. A static clone of YouTube UI using HTML/CSS.",
-      "2. Pixel-perfect layout with responsive design.",
-      "3. Used CSS Grid and Flexbox extensively.",
-      "4. Aimed at mastering layout and component structure.",
     ],
   },
 ];
