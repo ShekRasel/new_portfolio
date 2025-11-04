@@ -1,5 +1,5 @@
 import { useRef, useState, type FC, type JSX } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { HiOutlineBars3CenterLeft } from "react-icons/hi2";
 import { useClickOutSite } from "src/hooks/click.outside";
 import { Assets } from "src/utilities/assets";
@@ -78,7 +78,11 @@ export const Navbar: FC = (): JSX.Element => {
       </div>
 
       {/* logo */}
-      <img src={Assets.logo} alt="logo" width={60} className="rounded-lg" />
+
+      <Link to={"/"} className="cursor-pointer">
+        {" "}
+        <img src={Assets.logo} alt="logo" width={60} className="rounded-lg" />
+      </Link>
 
       {/* desktop view */}
       <div className="gap-4 hidden lg:flex">

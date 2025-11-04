@@ -73,7 +73,7 @@ export const ProjectDetails: FC = (): JSX.Element => {
         <div className="flex gap-4 items-center text-white">
           <h1>{selectedProject?.name}</h1>
           <span className="rounded-full text-sm border-white bg-pink px-4 py-1 border">
-            New
+            {selectedProject?.bedge}
           </span>
         </div>
         <div>
@@ -83,21 +83,30 @@ export const ProjectDetails: FC = (): JSX.Element => {
         </div>
         <div className="flex flex-col gap-2 text-white">
           <h1>Technology :</h1>
-          {selectedProject?.technology.map((tech, index) => (
-            <h2 key={index}>{tech}</h2>
+          {selectedProject?.technology.Frontend.map((tech, index) => (
+            <h2 key={index} className="pl-3 text-gray">
+              {tech}
+            </h2>
+          ))}
+
+          {selectedProject?.technology.Backend?.map((tech, index) => (
+            <h2 key={index} className="pl-3 text-gray">
+              {tech}
+            </h2>
           ))}
         </div>
         <div className="flex gap-2 justify-end">
           <a
             href={selectedProject?.projectLink}
             target="blank"
-            className="rounded-full border px-4 py-1 border-white text-white hover:bg-pink"
+            className="rounded-full border border-gray px-4 py-1 text-white hover:bg-violet"
           >
             Live Link
           </a>
           <a
-            href={selectedProject?.projectLink}
-            className="rounded-full border px-4 py-1 border-white text-white hover:bg-pink"
+            href={selectedProject?.githubLink}
+            target="blank"
+            className="rounded-full border border-gray px-4 py-1 text-white hover:bg-violet"
           >
             Github Link
           </a>

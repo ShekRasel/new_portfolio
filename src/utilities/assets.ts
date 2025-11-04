@@ -81,6 +81,9 @@ import eduF from "src/assets/projectImage/sub_image/education/f.png";
 import eduG from "src/assets/projectImage/sub_image/education/g.png";
 import eduH from "src/assets/projectImage/sub_image/education/h.png";
 
+//profile_iamge
+import profile_Image from "src/assets/profile_image/profile.jpg";
+
 export const Assets = {
   cryptoland,
   ecommere,
@@ -163,4 +166,7 @@ export const Assets = {
   eduF,
   eduG,
   eduH,
+
+  //profile_image
+  profile_Image,
 };
