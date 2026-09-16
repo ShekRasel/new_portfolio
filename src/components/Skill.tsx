@@ -1,65 +1,46 @@
 import jsLogo from "src/assets/svg/javascript.svg";
 import tsLogo from "src/assets/svg/typescript.svg";
-import nodeJsLogo from "src/assets/svg/nodejs.svg";
-import htmlLogo from "src/assets/svg/html.svg";
-import cssLogo from "src/assets/svg/css.svg";
+import nodeLogo from "src/assets/svg/nodejs.svg";
 import reactLogo from "src/assets/svg/react.svg";
-import expressLogo from "src/assets/svg/express.svg";
 import nextLogo from "src/assets/svg/nextjs.svg";
-import postgreLogo from "src/assets/svg/Postgresql_elephant.svg.png";
-import mysqlLogo from "src/assets/svg/my_sql.png";
-import oracleLogo from "src/assets/svg/oracle.png";
+import tailwindLogo from "src/assets/svg/tailwind-css.svg";
+import postgresLogo from "src/assets/svg/Postgresql_elephant.svg.png";
+import mongoLogo from "src/assets/svg/mongodb.svg";
+import { skillGroups } from "src/data/profile";
+import { Reveal } from "./Reveal";
 
-export const Skill = () => {
-  const skills = [
-    { src: tsLogo, color: "#3178C6" }, // TypeScript
-    { src: nodeJsLogo, color: "#68A063" }, // Node.js
-    { src: cssLogo, color: "#1572B6" }, // CSS
-    { src: nextLogo, color: "#FFFFFF" }, // Next.js
-    { src: htmlLogo, color: "#E34F26" }, // HTML
-    { src: reactLogo, color: "#61DAFB" }, // React
-    { src: expressLogo, color: "#fc02da" }, // Express (black)
-    { src: jsLogo, color: "#F7DF1E" }, // JavaScript
-    { src: postgreLogo, color: "#336791" }, // PostgreSQL Blue
-    { src: mysqlLogo, color: "#00758F" }, // MySQL Blue
-    { src: oracleLogo, color: "#F80000" }, // Oracle Red
-  ];
+const skills = [
+  { name: "React", src: reactLogo, category: "INTERFACE" },
+  { name: "Next.js", src: nextLogo, category: "FRAMEWORK", monochrome: true },
+  { name: "TypeScript", src: tsLogo, category: "LANGUAGE" },
+  { name: "JavaScript", src: jsLogo, category: "LANGUAGE" },
+  { name: "Node.js", src: nodeLogo, category: "BACKEND" },
+  { name: "Tailwind CSS", src: tailwindLogo, category: "STYLING" },
+  { name: "PostgreSQL", src: postgresLogo, category: "DATABASE" },
+  { name: "MongoDB", src: mongoLogo, category: "DATABASE" },
+];
 
-  return (
-    <div className="space-y-3 xl:px-16">
-      <h1 className="text-center text-xl  lg:text-2xl font-semibold text-pink">
-        Skills
-      </h1>
-      <h1 className="text-gray text-center text-2xl lg:text-3xl font-semibold">
-        Fully comfortable with
-      </h1>
-      <div className="bg-black rounded-md p-4 lg:p-8 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] place-items-center gap-6">
-        {skills.map((skill, idx) => (
-          <div
-            key={idx}
-            className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg transition duration-300 border border-white"
-            style={{
-              boxShadow: `0 0 20px ${skill.color}`, // Default glow
-            }}
-            onMouseEnter={(e) => {
-              (
-                e.currentTarget as HTMLDivElement
-              ).style.boxShadow = `0 0 40px ${skill.color}`; // Stronger glow
-            }}
-            onMouseLeave={(e) => {
-              (
-                e.currentTarget as HTMLDivElement
-              ).style.boxShadow = `0 0 20px ${skill.color}`; // Back to default glow
-            }}
-          >
-            <img
-              src={skill.src}
-              alt="skill logo"
-              className="w-12 h-12 lg:w-18 lg:h-18 object-contain transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+export const Skill = () => (
+  <section className="skills-section section page-width" aria-labelledby="skills-heading">
+    <Reveal className="section-heading">
+      <div><div className="eyebrow">THE TOOLKIT</div><h2 id="skills-heading">The right tools.<br /><span className="serif-accent">Endless possibilities.</span></h2></div>
+      <p>My everyday frontend toolkit, backed by experience with APIs, data, state management, animation, and AI-assisted development.</p>
+    </Reveal>
+    <Reveal className="skills-grid">
+      {skills.map(skill => (
+        <div className="skill-item" key={skill.name}>
+          <img src={skill.src} alt="" loading="lazy" className={skill.monochrome ? "monochrome-logo" : undefined} />
+          <div><h3>{skill.name}</h3><span className="mono">{skill.category}</span></div>
+        </div>
+      ))}
+    </Reveal>
+    <Reveal className="skill-groups">
+      {skillGroups.map(group => (
+        <div className="skill-group" key={group.name}>
+          <h3>{group.name}</h3>
+          <div className="tags">{group.skills.map(skill => <span key={skill}>{skill}</span>)}</div>
+        </div>
+      ))}
+    </Reveal>
+  </section>
+);

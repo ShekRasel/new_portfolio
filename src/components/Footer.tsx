@@ -1,25 +1,8 @@
-import type { FC, JSX } from "react";
-import { FaFacebook } from "react-icons/fa";
-import { GrGithub } from "react-icons/gr";
-import { LuLinkedin } from "react-icons/lu";
+import { Link } from "react-router-dom";
+import { FiGithub, FiLinkedin, FiArrowUp, FiMail } from "react-icons/fi";
+import { profile } from "src/data/profile";
 
-export const Footer: FC = (): JSX.Element => {
-  return (
-    <div className="flex justify-between p-4 lg:p-6 bg-black rounded-md text-gray w-full">
-      <p>Copyright © 2025 - All right reserved by Shek Rasel</p>
-      <div className="flex gap-4 text-white">
-        <a href="https://web.facebook.com/md.rasel.970600" target="blank">
-          <FaFacebook size={30} />
-        </a>
-        <a href="https://www.linkedin.com/in/shek-rasel/" target="blank">
-          {" "}
-          <LuLinkedin size={30} />
-        </a>
-        <a href="https://github.com/ShekRasel" target="blank">
-          {" "}
-          <GrGithub size={30} />
-        </a>
-      </div>
-    </div>
-  );
-};
+export const Footer = () => <footer className="site-footer page-width">
+  <div className="footer-top"><Link to="/" className="brand">rasel<span className="brand-dot">.</span></Link><p>Thoughtfully designed. Carefully built.</p><div className="social-links"><a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a><a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a><a href={"mailto:" + (import.meta.env.VITE_CONTACT_EMAIL?.trim() || profile.email)} aria-label="Email Shek Rasel"><FiMail /></a></div></div>
+  <div className="footer-bottom"><span>© {new Date().getFullYear()} Shek Rasel. All rights reserved.</span><span>Built with React & a little obsession.</span><button onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })}>Back to top <FiArrowUp /></button></div>
+</footer>;

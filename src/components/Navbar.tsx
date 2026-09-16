@@ -1,105 +1,45 @@
-import { useRef, useState, type FC, type JSX } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { HiOutlineBars3CenterLeft } from "react-icons/hi2";
-import { useClickOutSite } from "src/hooks/click.outside";
-import { Assets } from "src/utilities/assets";
-type NavUrl = {
-  name: string;
-  link: string;
-};
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 
-export const Navbar: FC = (): JSX.Element => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const divRef = useRef<HTMLDivElement | null>(null);
+const links = [["Home", "/"], ["About", "/about"], ["Projects", "/projects"], ["Journal", "/blog"], ["Contact", "/contact"]];
 
-  const handleMenuOpenClose = (): void => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
-
-  const closeMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  const navUrl: NavUrl[] = [
-    {
-      name: "Home",
-      link: "/",
-    },
-    {
-      name: "About Me",
-      link: "/about me",
-    },
-    {
-      name: "Projects",
-      link: "/projects",
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-    },
-    {
-      name: "Blog",
-      link: "/blog",
-    },
-  ];
-
-  // custom hook
-  useClickOutSite(divRef, closeMenu);
-
+export const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const header = useRef<HTMLElement>(null);
+  const toggle = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 681px)");
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    const closeOutside = (event: PointerEvent) => {
+      if (!header.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && open) { setOpen(false); toggle.current?.focus(); }
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", escape);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", escape);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [open]);
   return (
-    <div className="flex justify-between items-center">
-      {/* mobile view */}
-      <div ref={divRef} className="lg:hidden">
-        <button
-          className="bg-white font-bold p-2 rounded-lg cursor-pointer lg:hidden"
-          onClick={handleMenuOpenClose}
-        >
-          <HiOutlineBars3CenterLeft size={25} />
-        </button>
-
-        {isMobileMenuOpen && (
-          <div className="absolute left-0 flex flex-col bg-darkBlue text-gray top-20 rounded-lg border p-4 w-56 gap-0.5 z-50">
-            {navUrl.map((url) => (
-              <NavLink
-                to={url.link}
-                className={({ isActive }) =>
-                  `cursor-pointer px-6 py-2 hover:rounded-lg hover:bg-pink hover:text-white ${
-                    isActive ? "bg-violet text-white rounded-lg" : "text-gray"
-                  }`
-                }
-                key={url.name}
-                onClick={handleMenuOpenClose}
-              >
-                {url.name}
-              </NavLink>
-            ))}
-          </div>
-        )}
+    <header className="site-header" ref={header} onBlur={event => {
+      if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setOpen(false);
+    }}>
+      <div className="nav-shell">
+        <Link to="/" className="brand" aria-label="Shek Rasel home" onClick={() => setOpen(false)}>rasel<span className="brand-dot">.</span><span className="brand-caption">SOFTWARE ENGINEER</span></Link>
+        <nav aria-label="Main navigation" className="desktop-nav">
+          {links.map(([name, path]) => <NavLink key={path} to={path} end={path === "/"} className={({ isActive }) => isActive || (path === "/projects" && location.pathname.startsWith("/project/")) ? "nav-link active" : "nav-link"}>{name}</NavLink>)}
+        </nav>
+        <Link className="button button-dark nav-cta" to="/contact">Let’s talk <FiArrowUpRight /></Link>
+        <button ref={toggle} className="menu-toggle icon-button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <FiX /> : <FiMenu />}</button>
       </div>
-
-      {/* logo */}
-
-      <Link to={"/"} className="cursor-pointer">
-        {" "}
-        <img src={Assets.logo} alt="logo" width={60} className="rounded-lg" />
-      </Link>
-
-      {/* desktop view */}
-      <div className="gap-4 hidden lg:flex">
-        {navUrl.map((url) => (
-          <NavLink
-            to={url.link}
-            className={({ isActive }) =>
-              `cursor-pointer px-6 py-3 hover:rounded-lg hover:bg-pink hover:text-white ${
-                isActive ? "bg-violet text-white rounded-lg" : "text-gray"
-              }`
-            }
-            key={url.name}
-          >
-            {url.name}
-          </NavLink>
-        ))}
-      </div>
-    </div>
+      {open && <nav id="mobile-navigation" aria-label="Mobile navigation" className="mobile-nav">{links.map(([name, path], index) => <NavLink key={path} to={path} end={path === "/"} onClick={() => setOpen(false)}><span className="mono">0{index + 1}</span>{name}<FiArrowUpRight /></NavLink>)}</nav>}
+    </header>
   );
 };

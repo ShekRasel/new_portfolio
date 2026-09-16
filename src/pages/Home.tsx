@@ -1,18 +1,8 @@
-import type { FC, JSX } from "react";
-import { MainSection } from "src/components/main.section";
+import { MainSection, Features } from "src/components/main.section";
 import { AboutMe } from "./about.me";
 import { Skill } from "src/components/Skill";
 import { Project } from "./Project";
-import { Contact } from "./Contact";
+import { ContactBanner } from "src/components/ContactBanner";
+import { Experience } from "src/components/Experience";
 
-export const Home: FC = (): JSX.Element => {
-  return (
-    <div className="space-y-15 lg:space-y-20">
-      <MainSection />
-      <AboutMe />
-      <Skill />
-      <Project />
-      <Contact />
-    </div>
-  );
-};
+export const Home = () => <><MainSection /><div className="expertise-strip"><span>Thoughtful interfaces</span><span aria-hidden="true">✳</span><span>Powerful applications</span><span aria-hidden="true">✳</span><span>Meaningful experiences</span><span aria-hidden="true">✳</span><span>Built with care</span></div><Project featured /><Experience /><Features /><AboutMe compact /><Skill /><ContactBanner /></>;

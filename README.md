@@ -1,54 +1,45 @@
-# React + TypeScript + Vite
+﻿# Shek Rasel — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React and TypeScript portfolio for a frontend-focused software engineer. The Obsidian & Burnished Copper design includes Home, About, professional experience, education, Projects, individual project galleries, Journal, Contact, and a not-found page.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The development site runs at http://localhost:3000. On Windows PowerShell, use `npm.cmd` if script execution policy blocks `npm`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Validate and build
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm run lint
+npm run build
+npm run preview
 ```
+
+Production output is written to `dist`. Configure your hosting provider to serve `index.html` for client-side routes such as `/about`, `/projects`, and `/project/:slug`.
+
+## Profile and CV content
+
+`src/data/profile.ts` contains the professional title, summary, public contact details, work history, education, and categorized skills. Edit this file to keep Home, About, Experience, Skills, and Contact consistent.
+
+The Experience section appears on both Home and About. About also includes the education entry. Existing GitHub and LinkedIn URLs are retained because the pasted CV contained placeholder profile links. The résumé download continues to use the existing PDF at `src/assets/cv/Shek_Rasel_DIU_P_2.pdf`; replace that file separately when updating the downloadable document.
+
+## Contact
+
+The form validates a visitor’s name, email, and message and opens a prepared email addressed to `swe.rasel@gmail.com`. It does not automatically send email. The visitor reviews and sends the draft in their mail app. The prepared message also remains visible with a copy button in case no email app is configured. If clipboard permission is unavailable, it can be selected and copied manually.
+
+To override the public recipient, copy `.env.example` to `.env.local`, set `VITE_CONTACT_EMAIL`, and restart the development server or rebuild. Automatic delivery requires a separate backend or form service.
+
+## Customize
+
+- Design tokens, responsive layouts, and animation styles: `src/index.css`.
+- Profile, experience, education, and skills: `src/data/profile.ts`.
+- Project content, screenshots, live URLs, and repositories: `src/projects/project.ts` and `src/utilities/assets.ts`.
+- Page routes: `src/routes/index.tsx`. The old `/about me` URL redirects to `/about`.
+- The Journal page intentionally shows an unpublished state until real posts are available.
+- Google Fonts are used with local sans-serif fallbacks. The résumé and project imagery are local assets.
+
+Navigation includes active states, a mobile menu with Escape and outside-click dismissal, a skip link, and focus management. Galleries support keyboard arrows and thumbnails. Motion follows the visitor’s reduced-motion preference.

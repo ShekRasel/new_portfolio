@@ -1,79 +1,52 @@
-import { type FC, type JSX } from "react";
-import Lottie from "react-lottie";
-import { useLocation } from "react-router-dom";
-import { PrimaryButton } from "src/components/buttons/primary.button";
-import animationData from "src/lottiesAnimation/about.json";
+﻿import { Link } from "react-router-dom";
+import { FiArrowUpRight, FiDownload, FiCode, FiBookOpen, FiMapPin, FiUsers } from "react-icons/fi";
 import { Assets } from "src/utilities/assets";
+import { profile, experience } from "src/data/profile";
+import { Reveal } from "src/components/Reveal";
+import { Skill } from "src/components/Skill";
+import { Experience } from "src/components/Experience";
+import { ContactBanner } from "src/components/ContactBanner";
 
-export const AboutMe: FC = (): JSX.Element => {
-  const pathName = useLocation().pathname;
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  return (
-    <div className="flex flex-col lg:flex-row rounded-md items-center gap-10 xl:gap-20">
-      <div className="lg:w-1/2">
-        {pathName === "/about%20me" ? (
-          <img src={Assets.profile_Image} className="rounded-md " />
-        ) : (
-          <Lottie options={defaultOptions} width={"80%"} />
-        )}
-      </div>
-      <div className="lg:w-1/2 text-gray space-y-5">
-        <h1 className="text-2xl lg:text-3xl font-semibold">About Me</h1>
-        {pathName === "/about%20me" ? (
-          <div>
-            <p className="text-justify">
-              I’m Shek Rasel, a passionate and dedicated Full-Stack Web
-              Developer specializing in the MERN Stack, while continuously
-              exploring other technologies that spark my interest. I thrive on
-              crafting engaging digital experiences and enjoy creating
-              interactive UIs that not only function well but also delight
-              users. With hands-on experience delivering 20+ responsive,
-              SEO-optimized applications, I bring a solid command of both
-              frontend and backend development. I’m proficient in modern tools
-              like React.js, Next.js, Tailwind CSS, Zustand, and animation
-              libraries such as Framer Motion and GSAP. On the backend, I work
-              with Node.js, Express.js, NestJS, and Java Spring Boot, and I’m
-              confident working with databases like MongoDB, PostgreSQL, MySQL,
-              and Oracle DB. I follow clean code practices, apply TypeScript and
-              OOP principles, and structure backends using layered architecture
-              (routes → controllers → services → models). I’m comfortable with
-              the full development cycle—from planning with Figma, API testing
-              in Postman, and managing authentication with Clerk, to deploying
-              via Vercel and integrating CMS like Sanity.
-            </p>
-            <p className="text-justify mt-4">
-              Outside of coding, I love learning, building new things,
-              traveling, sightseeing, and reading books in my free time. I’m
-              always curious, always improving, and always creating.
-            </p>
+export const AboutMe = ({ compact = false }: { compact?: boolean }) => (
+  <>
+    <section className={"about-section section page-width " + (!compact ? "page-section" : "")}>
+      {!compact && (
+        <Reveal className="about-page-heading">
+          <div className="eyebrow">{profile.title.toUpperCase()}</div>
+          <h1 className="page-title">Frontend by focus.<br /><span className="serif-accent">Full stack by experience.</span></h1>
+        </Reveal>
+      )}
+      <div className="about-grid">
+        <Reveal className="about-image">
+          <img src={Assets.profile_Image} alt={profile.name} loading="lazy" />
+          <div className="about-image-note"><span className="label-star" aria-hidden="true">✳</span><span>Clean code.<br />Thoughtful experiences.</span></div>
+          <span className="mono about-photo-caption">A LITTLE ABOUT ME / SHEK RASEL</span>
+        </Reveal>
+        <Reveal className="about-copy">
+          <div className="eyebrow">{compact ? "04 / BEYOND THE CODE" : "HELLO, I’M RASEL"}</div>
+          <h2>A frontend focus.<br /><span className="serif-accent">A full-stack perspective.</span></h2>
+          <p>I’m {profile.name}, a frontend-focused software engineer based in Gazipur, Dhaka. I build responsive, scalable, and SEO-friendly web applications with Next.js, React, TypeScript, Node.js, and Tailwind CSS.</p>
+          <p>{profile.approach}</p>
+          {!compact && <p>I also use ChatGPT, Cursor AI, and Claude to accelerate development and improve code quality, bringing AI-assisted development into my everyday workflow.</p>}
+          <div className="profile-location"><FiMapPin aria-hidden="true" />{profile.location}</div>
+          <div className="about-facts">
+            <div><strong>{experience.length} teams</strong><span>Professional experience</span></div>
+            <div><strong>Frontend</strong><span>Focus, with full-stack experience</span></div>
           </div>
-        ) : (
-          <p className="text-justify">
-            I’m Shek Rasel, a passionate and dedicated Full-Stack Web Developer
-            specializing in the MERN Stack, while continuously exploring other
-            technologies that spark my interest. I thrive on crafting engaging
-            digital experiences and enjoy creating interactive UIs that not only
-            function well but also delight users. With hands-on experience
-            delivering 20+ responsive, SEO-optimized applications,I work with
-            Node.js, Express.js, NestJS, and Java Spring Boot, and I’m confident
-            working with databases like MongoDB, PostgreSQL, MySQL, and Oracle
-            DB. I follow clean code practices, apply TypeScript and OOP
-            principles, and structure backends using layered architecture
-            (routes → controllers → services → models).
-          </p>
-        )}
-
-        <a href={Assets.cv} download>
-          <PrimaryButton>Get Resume</PrimaryButton>
-        </a>
+          <div className="button-row">
+            {compact && <Link to="/about" className="button button-dark">More about me <FiArrowUpRight /></Link>}
+            <a className={"button " + (compact ? "button-outline" : "button-dark")} href={Assets.cv} download>Download résumé <FiDownload /></a>
+          </div>
+        </Reveal>
       </div>
-    </div>
-  );
-};
+      {!compact && (
+        <div className="personal-grid">
+          <Reveal><FiCode /><h3>From Figma to production</h3><p>I collaborate with UI/UX designers to turn designs into responsive, scalable interfaces, with attention to cross-browser compatibility, performance, and maintainable code.</p></Reveal>
+          <Reveal delay={0.08}><FiUsers /><h3>Better work, together</h3><p>At ShafaCode, I mentored junior developers and created frontend standard operating procedures to help teams build with consistent clean code practices.</p></Reveal>
+          <Reveal delay={0.16}><FiBookOpen /><h3>A systems perspective</h3><p>From planning ERP architecture and diagrams to building authentication and database workflows, I connect frontend decisions with the bigger picture.</p></Reveal>
+        </div>
+      )}
+    </section>
+    {!compact && <><Experience showEducation /><Skill /><ContactBanner /></>}
+  </>
+);

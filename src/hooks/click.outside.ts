@@ -12,5 +12,5 @@ export const useClickOutSite = (
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
-  }, [ref]);
+  }, [ref, onClose]);
 };

@@ -35,14 +35,14 @@ export const projects: Projects[] = [
     projectLink: "https://ecommerce-site-two-drab.vercel.app/",
     githubLink: "https://github.com/ShekRasel/ecommerce_site",
     technology: {
-      Frontend: ["Next.js", "TypeScript", "Tailwind CSS", "Sanity", "Clark"],
+      Frontend: ["Next.js", "TypeScript", "Tailwind CSS", "Sanity", "Clerk"],
       Backend: [],
     },
     descriptions: [
-      "1. Developed a full-featured e-commerce site with cart, product pages, and checkout.",
-      "2. Integrated responsive design with Tailwind CSS.",
-      "3. Utilized React hooks for state and side effect management.",
-      "4. Deployed on Vercel for seamless hosting.",
+      "1. Built a scalable e-commerce platform with Next.js, TypeScript, and Tailwind CSS.",
+      "2. Integrated Clerk Authentication and protected routes.",
+      "3. Used Sanity CMS for dynamic product management.",
+      "4. Created a responsive shopping interface and deployed the application on Vercel.",
     ],
   },
   {
@@ -88,14 +88,14 @@ export const projects: Projects[] = [
     projectLink: "https://task-pro-app-three.vercel.app/",
     githubLink: "https://github.com/ShekRasel/Task_Pro_App",
     technology: {
-      Frontend: ["Next.Js", "Tailwind CSS"],
+      Frontend: ["React.js", "Tailwind CSS"],
       Backend: [],
     },
     descriptions: [
-      "1. A Kanban-style task management application.",
-      "2. Implemented drag and drop functionality.",
-      "3. Organized tasks by boards and statuses.",
-      "4. Designed with reusability and scalability in mind.",
+      "1. Built a responsive task management application using React.js.",
+      "2. Added task creation to organize everyday work.",
+      "3. Implemented dark and light modes.",
+      "4. Designed a modern, responsive interface.",
     ],
   },
   {
@@ -199,7 +199,7 @@ export const projects: Projects[] = [
     githubLink: "https://github.com/ShekRasel/Event-Management-System",
     technology: {
       Frontend: ["React.Js", "Tailwind CSS"],
-      Backend: ["Nodejs", "Express.Js", "MonogoDB"],
+      Backend: ["Node.js", "Express.js", "MongoDB"],
     },
     descriptions: [
       "1. Event listing and ticketing front-end system.",
