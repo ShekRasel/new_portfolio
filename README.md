@@ -1,6 +1,12 @@
 ﻿# Shek Rasel — Portfolio
 
-A responsive React and TypeScript portfolio for a frontend-focused software engineer. The Obsidian & Burnished Copper design includes Home, About, professional experience, education, Projects, individual project galleries, Journal, Contact, and a not-found page.
+A responsive React and TypeScript portfolio for a frontend-focused software engineer. Includes Home, About, professional experience, education, Projects, individual project galleries, Journal, Contact, and a not-found page.
+
+## Light and dark themes
+
+The navbar’s moon/sun button switches between White & Deep Garnet (light) and the original Obsidian & Burnished Copper (dark). Light mode is the default. A visitor’s choice is saved under `rasel-portfolio-theme` in local storage and synchronized across tabs. If storage is unavailable, switching still works for the current page session.
+
+The saved theme is applied in `index.html` before the app renders to prevent a flash of the wrong palette. Native form controls, browser theme color, and favicon follow the selected theme. Light styles and dark color overrides are in `src/index.css`; the toggle is in `src/components/ThemeToggle.tsx`.
 
 ## Run locally
 

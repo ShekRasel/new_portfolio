@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#171715" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>
+      (() => {
+        let theme = "light";
+        try {
+          if (localStorage.getItem("rasel-portfolio-theme") === "dark") theme = "dark";
+        } catch { /* Use light mode when storage is unavailable. */ }
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#171715" : "#ffffff";
+        document.querySelector('link[rel="icon"]').href = theme === "dark" ? "/favicon-dark.svg" : "/favicon.svg";
+      })();
+    </script>
     <meta name="description" content="Shek Rasel is a frontend-focused software engineer in Gazipur, Dhaka, building responsive, scalable web applications with React, Next.js, TypeScript, and Node.js. Explore his experience, projects, and skills." />
     <title>Software Engineer (Frontend-Focused) — Shek Rasel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
