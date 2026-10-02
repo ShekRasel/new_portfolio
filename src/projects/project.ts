@@ -85,7 +85,7 @@ export const projects: Projects[] = [
     ],
     name: "TaskPro App",
     bedge: "new",
-    projectLink: "https://task-pro-app-three.vercel.app/",
+    projectLink: "https://task-pro-app-six.vercel.app/",
     githubLink: "https://github.com/ShekRasel/Task_Pro_App",
     technology: {
       Frontend: ["React.js", "Tailwind CSS"],
