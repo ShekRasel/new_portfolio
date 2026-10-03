@@ -7,6 +7,8 @@ type technology = {
   Backend: string[];
 };
 
+export type ProjectCategory = "frontend" | "full-stack";
+
 export type Projects = {
   id: number;
   image: string;
@@ -17,6 +19,7 @@ export type Projects = {
   subImages?: string[];
   githubLink: string;
   bedge: Bedge;
+  category: ProjectCategory;
 };
 
 export const projects: Projects[] = [
@@ -35,11 +38,12 @@ export const projects: Projects[] = [
     ],
     name: "Synzo Ecommerce site",
     bedge: "new",
+    category: "full-stack",
     projectLink: "https://ecommerce-site-two-drab.vercel.app/",
     githubLink: "https://github.com/ShekRasel/ecommerce_site",
     technology: {
-      Frontend: ["Next.js", "TypeScript", "Tailwind CSS", "Sanity", "Clerk"],
-      Backend: [],
+      Frontend: ["Next.js", "TypeScript", "Tailwind CSS"],
+      Backend: ["Sanity CMS", "Clerk"],
     },
     descriptions: [
       "1. Built a scalable e-commerce platform with Next.js, TypeScript, and Tailwind CSS.",
@@ -62,6 +66,7 @@ export const projects: Projects[] = [
     ],
     name: "Motorcycle Rent Application",
     bedge: "new",
+    category: "frontend",
     projectLink: "https://roam-moto-nu.vercel.app/",
     githubLink: "https://github.com/ShekRasel/Roam-Moto",
     technology: {
@@ -75,7 +80,7 @@ export const projects: Projects[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     image: Assets.ExpenseTrackerA,
     subImages: [
       Assets.ExpenseTrackerA,
@@ -90,6 +95,7 @@ export const projects: Projects[] = [
     ],
     name: "Expense Tracker",
     bedge: "old",
+    category: "full-stack",
     projectLink: "https://expense-tracker-mu-puce.vercel.app/",
     githubLink: "https://github.com/ShekRasel/expense-tracker",
     technology: {
@@ -104,7 +110,7 @@ export const projects: Projects[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     image: Assets.HotelA,
     subImages: [
       Assets.HotelA,
@@ -117,10 +123,11 @@ export const projects: Projects[] = [
     ],
     name: "Hotel management",
     bedge: "old",
+    category: "frontend",
     projectLink: "https://da-hotel-website.vercel.app/",
     githubLink: "https://github.com/ShekRasel/DaHotel-website",
     technology: {
-      Frontend: ["React.Js", "Tailwind CSS"],
+      Frontend: ["React.js", "Tailwind CSS"],
       Backend: [],
     },
     descriptions: [
@@ -131,7 +138,7 @@ export const projects: Projects[] = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     image: Assets.Task_Pro_A,
     subImages: [
       Assets.Task_Pro_A,
@@ -143,21 +150,22 @@ export const projects: Projects[] = [
     ],
     name: "TaskPro App",
     bedge: "new",
+    category: "frontend",
     projectLink: "https://task-pro-app-six.vercel.app/",
     githubLink: "https://github.com/ShekRasel/Task_Pro_App",
     technology: {
-      Frontend: ["React.js", "Tailwind CSS"],
+      Frontend: ["Next.js", "Tailwind CSS"],
       Backend: [],
     },
     descriptions: [
-      "1. Built a responsive task management application using React.js.",
+      "1. Built a responsive task management application using Next.js.",
       "2. Added task creation to organize everyday work.",
       "3. Implemented dark and light modes.",
       "4. Designed a modern, responsive interface.",
     ],
   },
   {
-    id: 5,
+    id: 6,
     image: Assets.cryptoland,
     subImages: [
       Assets.cryptolandA,
@@ -171,10 +179,11 @@ export const projects: Projects[] = [
     ],
     name: "Cryptoland",
     bedge: "old",
+    category: "frontend",
     projectLink: "https://cryptoland-chi.vercel.app/",
     githubLink: "https://github.com/ShekRasel/Cryptoland",
     technology: {
-      Frontend: ["React.Js", "Tailwind CSS"],
+      Frontend: ["React.js", "Tailwind CSS"],
       Backend: [],
     },
     descriptions: [
@@ -185,7 +194,7 @@ export const projects: Projects[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     image: Assets.nft,
     subImages: [
       Assets.nftA,
@@ -198,10 +207,11 @@ export const projects: Projects[] = [
     ],
     name: "NFT Market Place",
     bedge: "recent",
+    category: "frontend",
     projectLink: "https://nft-market-place-chi-eight.vercel.app/",
     githubLink: "https://github.com/ShekRasel/NFT-Market-Place",
     technology: {
-      Frontend: ["React.Js", "Tailwind CSS"],
+      Frontend: ["React.js", "Tailwind CSS"],
       Backend: [],
     },
     descriptions: [
@@ -212,7 +222,7 @@ export const projects: Projects[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     image: Assets.event,
     subImages: [
       Assets.eventA,
@@ -226,23 +236,25 @@ export const projects: Projects[] = [
     ],
     name: "Event Management System",
     bedge: "old",
+    category: "full-stack",
     projectLink: "https://frontend-eight-steel-19.vercel.app/",
     githubLink: "https://github.com/ShekRasel/Event-Management-System",
     technology: {
-      Frontend: ["React.Js", "Tailwind CSS"],
+      Frontend: ["React.js", "Tailwind CSS"],
       Backend: ["Node.js", "Express.js", "MongoDB"],
     },
     descriptions: [
-      "1. Event listing and ticketing front-end system.",
+      "1. Built a full-stack event listing and ticketing system.",
       "2. Managed dynamic content with React state.",
       "3. Created modular components for reusability.",
       "4. Developed form validation and UI feedback.",
     ],
   },
   {
-    id: 8,
+    id: 9,
     image: Assets.Education_UI,
     bedge: "old",
+    category: "frontend",
     name: "Education Landing page",
     subImages: [
       Assets.eduA,
@@ -257,7 +269,7 @@ export const projects: Projects[] = [
     projectLink: "https://education-site-henna.vercel.app/",
     githubLink: "https://github.com/ShekRasel/Education-site",
     technology: {
-      Frontend: ["React.Js", "Tailwind CSS"],
+      Frontend: ["React.js", "Tailwind CSS"],
       Backend: [],
     },
     descriptions: [
