@@ -43,10 +43,6 @@ import cryptolandA from "src/assets/projectImage/sub_image/cryptoland/a.png";
 import cryptolandB from "src/assets/projectImage/sub_image/cryptoland/b.png";
 import cryptolandC from "src/assets/projectImage/sub_image/cryptoland/c.png";
 import cryptolandD from "src/assets/projectImage/sub_image/cryptoland/d.png";
-import cryptolandE from "src/assets/projectImage/sub_image/cryptoland/e.png";
-import cryptolandF from "src/assets/projectImage/sub_image/cryptoland/f.png";
-import cryptolandG from "src/assets/projectImage/sub_image/cryptoland/g.png";
-import cryptolandH from "src/assets/projectImage/sub_image/cryptoland/h.png";
 
 //expense tracker
 import ExpenseTrackerA from "src/assets/projectImage/sub_image/expense tracker/a.png";
@@ -73,9 +69,6 @@ import nftA from "src/assets/projectImage/sub_image/nft_marketplace/a.png";
 import nftB from "src/assets/projectImage/sub_image/nft_marketplace/b.png";
 import nftC from "src/assets/projectImage/sub_image/nft_marketplace/c.png";
 import nftD from "src/assets/projectImage/sub_image/nft_marketplace/d.png";
-import nftE from "src/assets/projectImage/sub_image/nft_marketplace/e.png";
-import nftF from "src/assets/projectImage/sub_image/nft_marketplace/f.png";
-import nftG from "src/assets/projectImage/sub_image/nft_marketplace/g.png";
 
 //event management
 import eventA from "src/assets/projectImage/sub_image/event_m/a.png";
@@ -91,11 +84,6 @@ import eventH from "src/assets/projectImage/sub_image/event_m/h.png";
 import eduA from "src/assets/projectImage/sub_image/education/a.png";
 import eduB from "src/assets/projectImage/sub_image/education/b.png";
 import eduC from "src/assets/projectImage/sub_image/education/c.png";
-import eduD from "src/assets/projectImage/sub_image/education/d.png";
-import eduE from "src/assets/projectImage/sub_image/education/e.png";
-import eduF from "src/assets/projectImage/sub_image/education/f.png";
-import eduG from "src/assets/projectImage/sub_image/education/g.png";
-import eduH from "src/assets/projectImage/sub_image/education/h.png";
 
 //profile_iamge
 import profile_Image from "src/assets/profile_image/profile.jpg";
@@ -145,10 +133,6 @@ export const Assets = {
   cryptolandB,
   cryptolandC,
   cryptolandD,
-  cryptolandE,
-  cryptolandF,
-  cryptolandG,
-  cryptolandH,
 
   //expense tracker
   ExpenseTrackerA,
@@ -175,9 +159,6 @@ export const Assets = {
   nftB,
   nftC,
   nftD,
-  nftE,
-  nftF,
-  nftG,
 
   //event
   eventA,
@@ -193,11 +174,6 @@ export const Assets = {
   eduA,
   eduB,
   eduC,
-  eduD,
-  eduE,
-  eduF,
-  eduG,
-  eduH,
 
   //profile_image
   profile_Image,
