@@ -17,6 +17,9 @@ import EcommerceB from "src/assets/projectImage/sub_image/ecomerce/b.png";
 import EcommerceC from "src/assets/projectImage/sub_image/ecomerce/c.png";
 import EcommerceD from "src/assets/projectImage/sub_image/ecomerce/d.png";
 import EcommerceE from "src/assets/projectImage/sub_image/ecomerce/e.png";
+import EcommerceF from "src/assets/projectImage/sub_image/ecomerce/f.png";
+import EcommerceG from "src/assets/projectImage/sub_image/ecomerce/g.png";
+import EcommerceH from "src/assets/projectImage/sub_image/ecomerce/h.png";
 
 //hotel management
 import HotelA from "src/assets/projectImage/sub_image/hotel/a.png";
@@ -45,12 +48,25 @@ import cryptolandF from "src/assets/projectImage/sub_image/cryptoland/f.png";
 import cryptolandG from "src/assets/projectImage/sub_image/cryptoland/g.png";
 import cryptolandH from "src/assets/projectImage/sub_image/cryptoland/h.png";
 
-//expense
-import expenseA from "src/assets/projectImage/sub_image/expense/a.png";
-import expenseB from "src/assets/projectImage/sub_image/expense/b.png";
-import expenseC from "src/assets/projectImage/sub_image/expense/c.png";
-import expenseD from "src/assets/projectImage/sub_image/expense/d.png";
-import expenseE from "src/assets/projectImage/sub_image/expense/e.png";
+//expense tracker
+import ExpenseTrackerA from "src/assets/projectImage/sub_image/expense tracker/a.png";
+import ExpenseTrackerB from "src/assets/projectImage/sub_image/expense tracker/b.png";
+import ExpenseTrackerC from "src/assets/projectImage/sub_image/expense tracker/c.png";
+import ExpenseTrackerD from "src/assets/projectImage/sub_image/expense tracker/d.png";
+import ExpenseTrackerE from "src/assets/projectImage/sub_image/expense tracker/e.png";
+import ExpenseTrackerF from "src/assets/projectImage/sub_image/expense tracker/f.png";
+import ExpenseTrackerG from "src/assets/projectImage/sub_image/expense tracker/g.png";
+import ExpenseTrackerH from "src/assets/projectImage/sub_image/expense tracker/h.png";
+import ExpenseTrackerI from "src/assets/projectImage/sub_image/expense tracker/i.png";
+
+//motorcycle rent
+import MotorcycleRentA from "src/assets/projectImage/sub_image/motorcycle rent/a.png";
+import MotorcycleRentB from "src/assets/projectImage/sub_image/motorcycle rent/b.png";
+import MotorcycleRentC from "src/assets/projectImage/sub_image/motorcycle rent/c.png";
+import MotorcycleRentD from "src/assets/projectImage/sub_image/motorcycle rent/d.png";
+import MotorcycleRentE from "src/assets/projectImage/sub_image/motorcycle rent/e.png";
+import MotorcycleRentF from "src/assets/projectImage/sub_image/motorcycle rent/f.png";
+import MotorcycleRentG from "src/assets/projectImage/sub_image/motorcycle rent/g.png";
 
 //nft market
 import nftA from "src/assets/projectImage/sub_image/nft_marketplace/a.png";
@@ -103,6 +119,9 @@ export const Assets = {
   EcommerceC,
   EcommerceD,
   EcommerceE,
+  EcommerceF,
+  EcommerceG,
+  EcommerceH,
 
   //hotel
   HotelA,
@@ -131,12 +150,25 @@ export const Assets = {
   cryptolandG,
   cryptolandH,
 
-  //expense
-  expenseA,
-  expenseB,
-  expenseC,
-  expenseD,
-  expenseE,
+  //expense tracker
+  ExpenseTrackerA,
+  ExpenseTrackerB,
+  ExpenseTrackerC,
+  ExpenseTrackerD,
+  ExpenseTrackerE,
+  ExpenseTrackerF,
+  ExpenseTrackerG,
+  ExpenseTrackerH,
+  ExpenseTrackerI,
+
+  //motorcycle rent
+  MotorcycleRentA,
+  MotorcycleRentB,
+  MotorcycleRentC,
+  MotorcycleRentD,
+  MotorcycleRentE,
+  MotorcycleRentF,
+  MotorcycleRentG,
 
   //nft
   nftA,

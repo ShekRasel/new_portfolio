@@ -22,13 +22,16 @@ export type Projects = {
 export const projects: Projects[] = [
   {
     id: 1,
-    image: Assets.ecommere,
+    image: Assets.EcommerceA,
     subImages: [
       Assets.EcommerceA,
       Assets.EcommerceB,
       Assets.EcommerceC,
       Assets.EcommerceD,
       Assets.EcommerceE,
+      Assets.EcommerceF,
+      Assets.EcommerceG,
+      Assets.EcommerceH,
     ],
     name: "Synzo Ecommerce site",
     bedge: "new",
@@ -47,7 +50,62 @@ export const projects: Projects[] = [
   },
   {
     id: 2,
-    image: Assets.hotel,
+    image: Assets.MotorcycleRentA,
+    subImages: [
+      Assets.MotorcycleRentA,
+      Assets.MotorcycleRentB,
+      Assets.MotorcycleRentC,
+      Assets.MotorcycleRentD,
+      Assets.MotorcycleRentE,
+      Assets.MotorcycleRentF,
+      Assets.MotorcycleRentG,
+    ],
+    name: "Motorcycle Rent Application",
+    bedge: "new",
+    projectLink: "https://roam-moto-nu.vercel.app/",
+    githubLink: "https://github.com/ShekRasel/Roam-Moto",
+    technology: {
+      Frontend: ["Next.js", "Tailwind CSS"],
+      Backend: [],
+    },
+    descriptions: [
+      "1. Developed a motorcycle rental frontend using Next.js.",
+      "2. Designed clean page layouts and consistent UI components.",
+      "3. Focused on frontend design without backend integration.",
+    ],
+  },
+  {
+    id: 2,
+    image: Assets.ExpenseTrackerA,
+    subImages: [
+      Assets.ExpenseTrackerA,
+      Assets.ExpenseTrackerB,
+      Assets.ExpenseTrackerC,
+      Assets.ExpenseTrackerD,
+      Assets.ExpenseTrackerE,
+      Assets.ExpenseTrackerF,
+      Assets.ExpenseTrackerG,
+      Assets.ExpenseTrackerH,
+      Assets.ExpenseTrackerI,
+    ],
+    name: "Expense Tracker",
+    bedge: "old",
+    projectLink: "https://expense-tracker-mu-puce.vercel.app/",
+    githubLink: "https://github.com/ShekRasel/expense-tracker",
+    technology: {
+      Frontend: ["Next.js", "Tailwind CSS"],
+      Backend: ["NestJS"],
+    },
+    descriptions: [
+      "1. Built a full-stack expense tracking application using Next.js and NestJS.",
+      "2. Designed the user interface with Tailwind CSS.",
+      "3. Implemented user authentication.",
+      "4. Enabled users to record and manage their daily expenses.",
+    ],
+  },
+  {
+    id: 3,
+    image: Assets.HotelA,
     subImages: [
       Assets.HotelA,
       Assets.HotelB,
@@ -73,8 +131,8 @@ export const projects: Projects[] = [
     ],
   },
   {
-    id: 3,
-    image: Assets.task_pro,
+    id: 4,
+    image: Assets.Task_Pro_A,
     subImages: [
       Assets.Task_Pro_A,
       Assets.Task_Pro_B,
@@ -126,33 +184,6 @@ export const projects: Projects[] = [
       "4. Includes search and sorting capabilities.",
     ],
   },
-  {
-    id: 4,
-    image: Assets.expense,
-    subImages: [
-      Assets.expenseA,
-      Assets.expenseB,
-      Assets.expenseC,
-      Assets.expenseD,
-      Assets.expenseE,
-    ],
-
-    name: "Expense Tracker",
-    bedge: "recent",
-    projectLink: "https://expense-tracker-mu-puce.vercel.app/",
-    githubLink: "https://github.com/ShekRasel/expense-tracker",
-    technology: {
-      Frontend: ["Next.Js", "Tailwind CSS"],
-      Backend: ["Nest.Js", "TypeScript"],
-    },
-    descriptions: [
-      "1. Built a dynamic expense tracker with React.",
-      "2. Used localStorage to persist user data.",
-      "3. Added filtering by category and date.",
-      "4. Focused on clean UI with real-time updates.",
-    ],
-  },
-
   {
     id: 6,
     image: Assets.nft,
