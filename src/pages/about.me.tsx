@@ -19,7 +19,7 @@ export const AboutMe = ({ compact = false }: { compact?: boolean }) => (
       <div className="about-grid">
         <Reveal className="about-image">
           <img src={Assets.profile_Image} alt={profile.name} loading="lazy" />
-          <div className="about-image-note"><span className="label-star" aria-hidden="true">✳</span><span>Clean code.<br />Thoughtful experiences.</span></div>
+          <div className="about-image-note"><span>Clean code.<br />Thoughtful experiences.</span></div>
           <span className="mono about-photo-caption">A LITTLE ABOUT ME / SHEK RASEL</span>
         </Reveal>
         <Reveal className="about-copy">

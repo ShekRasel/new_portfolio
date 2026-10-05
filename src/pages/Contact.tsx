@@ -44,7 +44,7 @@ export const Contact = () => {
             <a href={profile.github} target="_blank" rel="noreferrer"><FiGithub /><div><span className="mono">FOLLOW THE WORK</span><strong>github.com/ShekRasel</strong></div><FiArrowUpRight /></a>
           </div>
           <div className="contact-location"><FiMapPin aria-hidden="true" /><span>{profile.location}</span></div>
-          <div className="contact-note"><span aria-hidden="true">✳</span><p>Big ideas or small details.<br />Every good project starts somewhere.</p></div>
+          <div className="contact-note"><p>Big ideas or small details.<br />Every good project starts somewhere.</p></div>
         </Reveal>
         <Reveal className="contact-form-wrap" delay={0.1}>
           <form onSubmit={submit} onChange={clearPreparedMessage} className="contact-form">

@@ -16,10 +16,9 @@ export const MainSection = () => <section className="hero page-width">
     </Reveal>
     <Reveal className="hero-visual" delay={0.12}>
       <div className="orbit orbit-one" /><div className="orbit orbit-two" />
-      <span className="hero-star" aria-hidden="true">✳</span>
       <div className="portrait-frame"><img src={Assets.profile_Image} alt="Shek Rasel, frontend-focused software engineer" fetchPriority="high" /><div className="portrait-caption"><span>SHEK RASEL</span><span>Code. Create. Repeat.</span></div></div>
       <div className="floating-label code-label"><span className="code-icon"><FiCode /></span><div>Built with intention<span>From the first pixel to the last line.</span></div></div>
-      <div className="floating-label project-label"><span className="label-star">✳</span><strong>{experience.length}</strong><span>teams<br />contributed to</span></div>
+      <div className="floating-label project-label"><strong>{experience.length}</strong><span>teams<br />contributed to</span></div>
       <span className="visual-caption mono">IDEAS → DESIGN → DEVELOPMENT</span>
     </Reveal>
   </div>
