@@ -211,7 +211,7 @@ export const projects: Projects[] = [
   },
   {
     id: 8,
-    image: Assets.event,
+    image: Assets.eventA,
     subImages: [
       Assets.eventA,
       Assets.eventB,
