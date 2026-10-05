@@ -225,8 +225,8 @@ export const projects: Projects[] = [
     name: "Event Management System",
     bedge: "old",
     category: "full-stack",
-    projectLink: "https://frontend-eight-steel-19.vercel.app/",
-    githubLink: "https://github.com/ShekRasel/Event-Management-System",
+    projectLink: "https://event-management-frontend-bice.vercel.app/",
+    githubLink: "https://github.com/ShekRasel/Event-Management-Frontend",
     technology: {
       Frontend: ["React.js", "Tailwind CSS"],
       Backend: ["Node.js", "Express.js", "MongoDB"],
